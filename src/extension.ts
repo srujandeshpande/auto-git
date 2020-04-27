@@ -8,6 +8,12 @@ export function activate(context: vscode.ExtensionContext) {
 
 	// Use the console to output diagnostic information (console.log) and errors (console.error)
 	// This line of code will only be executed once when your extension is activated
+	
+	const cp = require('child_process');
+	cp.exec('pwd', (err, stdout, stderr) => {
+		console.log('stdout: ' + stdout);
+	});
+
 	console.log('Congratulations, your extension "auto-git" is now active!');
 
 	// The command has been defined in the package.json file
