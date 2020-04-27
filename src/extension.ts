@@ -13,6 +13,7 @@ export function activate(context: vscode.ExtensionContext) {
 	
 	console.log('Congratulations, your extension "auto-git" is now active!');
 
+	/*	
 	cp.exec('echo $0', (err: string, stdout: string, stderr: string) => {
 		console.log('shell: ' + stdout);
 		if(stdout === "/bin/sh"){
@@ -22,7 +23,7 @@ export function activate(context: vscode.ExtensionContext) {
 			console.log("nope");
 		}
 	});
-	
+	*/
 
 	// The command has been defined in the package.json file
 	// Now provide the implementation of the command with registerCommand
@@ -35,14 +36,14 @@ export function activate(context: vscode.ExtensionContext) {
 	});
 
 	context.subscriptions.push(disposable);
-	console.log("sh1");
+	console.log("h1");
 
 	cp.exec('git add .');
-	console.log("sh2");
+	console.log("h2");
 	cp.exec('git commit -m "worked"');
-	console.log("sh3");
+	console.log("h3");
 	cp.exec('git push');
-	console.log("sh4");
+	console.log("h4");
 
 }
 
