@@ -14,22 +14,22 @@ export function activate(context: vscode.ExtensionContext) {
 	const cp = require('child_process');
 	//cp.exec('cd Projects');
 	//cp.exec('auto-git');
-	cp.exec('pwd', (err, stdout, stderr) => {
+	cp.exec('pwd', (err: string, stdout: string, stderr: string) => {
 		console.log('stdout: ' + stdout);
 		console.log('stderr: ' + stderr);
 		console.log('err: ' + err);
 	});
-	cp.exec('git add .', (err, stdout, stderr) => {
+	cp.exec('git add .', (err: string, stdout: string, stderr: string) => {
 		console.log('stdout: ' + stdout);
 		console.log('stderr: ' + stderr);
 		console.log('err: ' + err);
 	});
-	cp.exec('git commit -m "git working"', (err, stdout, stderr) => {
+	cp.exec('git commit -m "git auto commit"', (err: string, stdout: string, stderr: string) => {
 		console.log('stdout: ' + stdout);
 		console.log('stderr: ' + stderr);
 		console.log('err: ' + err);
 	});
-	cp.exec('git push', (err, stdout, stderr) => {
+	cp.exec('git push', (err: string, stdout: string, stderr: string) => {
 		console.log('stdout: ' + stdout);
 		console.log('stderr: ' + stderr);
 		console.log('err: ' + err);
