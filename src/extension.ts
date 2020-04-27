@@ -15,8 +15,8 @@ export function activate(context: vscode.ExtensionContext) {
 
 	cp.exec('echo $0', (err: string, stdout: string, stderr: string) => {
 		console.log('shell: ' + stdout);
-		if(stdout === '/bin/sh'){
-			console.log("sh");
+		if(stdout === "/bin/sh"){
+			console.log("sh bin");
 		}
 		else{
 			console.log("nope");
@@ -35,13 +35,14 @@ export function activate(context: vscode.ExtensionContext) {
 	});
 
 	context.subscriptions.push(disposable);
+	console.log("sh1");
 
-	cp.exec('pwd', (err: string, stdout: string, stderr: string) => {
-		console.log('stdout: ' + stdout);
-	});
 	cp.exec('git add .');
+	console.log("sh2");
 	cp.exec('git commit -m "worked"');
+	console.log("sh3");
 	cp.exec('git push');
+	console.log("sh4");
 
 }
 
