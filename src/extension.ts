@@ -33,4 +33,11 @@ export function activate(context: vscode.ExtensionContext) {
 }
 
 // this method is called when your extension is deactivated
-export function deactivate() {}
+export function deactivate(context: vscode.ExtensionContext) {
+	console.log('The extension "auto-git" is now deactivated!');
+	
+	let disposable = vscode.commands.registerCommand('auto-git.autoGit', () => {
+		vscode.window.showInformationMessage('Auto Git Deactivated');
+	});
+	context.subscriptions.push(disposable);
+}
