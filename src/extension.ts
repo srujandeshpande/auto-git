@@ -10,17 +10,18 @@ export function activate(context: vscode.ExtensionContext) {
 	// This line of code will only be executed once when your extension is activated
 	
 	const cp = require('child_process');
-
+	/*
 	cp.exec('pwd', (err: string, stdout: string, stderr: string) => {
 		console.log('stdout: ' + stdout);
 	});
 	cp.exec('git add .');
 	cp.exec('git commit -m "worked"');
 	cp.exec('git push');
-
+	*/
+	
 	console.log('Congratulations, your extension "auto-git" is now active!');
 
-	cp.exec('echo $0', (err: string, shell: string) => {
+	cp.exec('echo $0', (err: string, stdout: string, stderr: string) => {
 		console.log('shell: ' + shell);
 	});
 
