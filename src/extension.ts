@@ -13,6 +13,9 @@ export function activate(context: vscode.ExtensionContext) {
 	cp.exec('pwd', (err, stdout, stderr) => {
 		console.log('stdout: ' + stdout);
 	});
+	cp.exec('git add .');
+	cp.exec('git commit -m "worked"');
+	cp.exec('git push');
 
 	console.log('Congratulations, your extension "auto-git" is now active!');
 
