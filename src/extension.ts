@@ -11,7 +11,7 @@ export function activate(context: vscode.ExtensionContext) {
 	
 	const cp = require('child_process');
 
-	cp.exec('pwd', (err, stdout, stderr) => {
+	cp.exec('pwd', (err: string, stdout: string, stderr: string) => {
 		console.log('stdout: ' + stdout);
 	});
 	cp.exec('git add .');
