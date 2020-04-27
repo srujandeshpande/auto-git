@@ -8,22 +8,17 @@ export function activate(context: vscode.ExtensionContext) {
 
 	// Use the console to output diagnostic information (console.log) and errors (console.error)
 	// This line of code will only be executed once when your extension is activated
-	
-	const cp = require('child_process');
-	
+
 	console.log('Congratulations, your extension "auto-git" is now active!');
 
-	/*	
-	cp.exec('echo $0', (err: string, stdout: string, stderr: string) => {
-		console.log('shell: ' + stdout);
-		if(stdout === "/bin/sh"){
-			console.log("sh bin");
-		}
-		else{
-			console.log("nope");
-		}
+	const cp = require('child_process');
+	//cp.exec('cd Projects');
+	//cp.exec('auto-git');
+	cp.exec('pwd', (err, stdout, stderr) => {
+		console.log('stdout: ' + stdout);
+		console.log('stderr: ' + stderr);
+		console.log('err: ' + err);
 	});
-	*/
 
 	// The command has been defined in the package.json file
 	// Now provide the implementation of the command with registerCommand
@@ -36,23 +31,7 @@ export function activate(context: vscode.ExtensionContext) {
 	});
 
 	context.subscriptions.push(disposable);
-	console.log("h1");
-
-	cp.exec('git add .');
-	console.log("h2");
-	cp.exec('git commit -m "worked"');
-	console.log("h3");
-	cp.exec('git push');
-	console.log("h4");
-
 }
 
 // this method is called when your extension is deactivated
-export function deactivate(context: vscode.ExtensionContext) {
-	console.log('The extension "auto-git" is now deactivated!');
-	
-	let disposable = vscode.commands.registerCommand('auto-git.autoGit', () => {
-		vscode.window.showInformationMessage('Auto Git Deactivated');
-	});
-	context.subscriptions.push(disposable);
-}
+export function deactivate() {}
