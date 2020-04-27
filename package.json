@@ -10,14 +10,14 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:auto-git.helloWorld"
+		"onCommand:auto-git.autoGit"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "auto-git.helloWorld",
-				"title": "Hello World"
+				"command": "auto-git.autoGit",
+				"title": "Auto Git"
 			}
 		]
 	},
