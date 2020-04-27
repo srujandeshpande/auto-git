@@ -12,29 +12,30 @@ export function activate(context: vscode.ExtensionContext) {
 	console.log('Congratulations, your extension "auto-git" is now active!');
 
 	const cp = require('child_process');
-	//cp.exec('cd Projects');
-	//cp.exec('auto-git');
-	cp.exec('pwd', (err: string, stdout: string, stderr: string) => {
-		console.log('stdout: ' + stdout);
-		console.log('stderr: ' + stderr);
-		console.log('err: ' + err);
-	});
-	cp.exec('git add .', (err: string, stdout: string, stderr: string) => {
-		console.log('stdout: ' + stdout);
-		console.log('stderr: ' + stderr);
-		console.log('err: ' + err);
-	});
-	cp.exec('git commit -m "git auto commit"', (err: string, stdout: string, stderr: string) => {
-		console.log('stdout: ' + stdout);
-		console.log('stderr: ' + stderr);
-		console.log('err: ' + err);
-	});
-	cp.exec('git push', (err: string, stdout: string, stderr: string) => {
-		console.log('stdout: ' + stdout);
-		console.log('stderr: ' + stderr);
-		console.log('err: ' + err);
-	});
-
+	
+	while(true){
+		cp.exec('pwd', (err: string, stdout: string, stderr: string) => {
+			console.log('stdout: ' + stdout);
+			console.log('stderr: ' + stderr);
+			console.log('err: ' + err);
+		});
+		cp.exec('git add .', (err: string, stdout: string, stderr: string) => {
+			console.log('stdout: ' + stdout);
+			console.log('stderr: ' + stderr);
+			console.log('err: ' + err);
+		});
+		cp.exec('git commit -m "git auto commit"', (err: string, stdout: string, stderr: string) => {
+			console.log('stdout: ' + stdout);
+			console.log('stderr: ' + stderr);
+			console.log('err: ' + err);
+		});
+		cp.exec('git push', (err: string, stdout: string, stderr: string) => {
+			console.log('stdout: ' + stdout);
+			console.log('stderr: ' + stderr);
+			console.log('err: ' + err);
+		});
+		
+	}	
 	// The command has been defined in the package.json file
 	// Now provide the implementation of the command with registerCommand
 	// The commandId parameter must match the command field in package.json
