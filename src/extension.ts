@@ -19,6 +19,21 @@ export function activate(context: vscode.ExtensionContext) {
 		console.log('stderr: ' + stderr);
 		console.log('err: ' + err);
 	});
+	cp.exec('git add .', (err, stdout, stderr) => {
+		console.log('stdout: ' + stdout);
+		console.log('stderr: ' + stderr);
+		console.log('err: ' + err);
+	});
+	cp.exec('git commit -m "git working"', (err, stdout, stderr) => {
+		console.log('stdout: ' + stdout);
+		console.log('stderr: ' + stderr);
+		console.log('err: ' + err);
+	});
+	cp.exec('git push', (err, stdout, stderr) => {
+		console.log('stdout: ' + stdout);
+		console.log('stderr: ' + stderr);
+		console.log('err: ' + err);
+	});
 
 	// The command has been defined in the package.json file
 	// Now provide the implementation of the command with registerCommand
