@@ -14,14 +14,16 @@ export function activate(context: vscode.ExtensionContext) {
 	const cp = require('child_process');
 	
 	//const exec = require('child_process').exec;
-	const myShellScript = cp.exec('sh bash-git-file.sh');
-	myShellScript.stdout.on('data', (data: any)=>{
+	cp.exec('pwd', (err: string, stdout: string, stderr: string) => {
+		console.log('stdout: ' + stdout);
+	});
+	const myShellScript = cp.exec('./bash-git-file.sh');
+	myShellScript.stdout.on('data2', (data: any)=>{
 		console.log(data); 
-		// do whatever you want here with data
 	});
-	myShellScript.stderr.on('data', (data: any)=>{
+	myShellScript.stderr.on('data22', (data: any)=>{
 		console.log(data);
-	});
+	}); 
 
 	/*
 	while(true){
