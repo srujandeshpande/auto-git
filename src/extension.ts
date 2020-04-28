@@ -14,15 +14,16 @@ export function activate(context: vscode.ExtensionContext) {
 	const cp = require('child_process');
 	
 	//const exec = require('child_process').exec;
-	const myShellScript = cp.exec('sh bash-git-file.sh /src');
+	const myShellScript = cp.exec('sh bash-git-file.sh');
 	myShellScript.stdout.on('data', (data: any)=>{
 		console.log(data); 
 		// do whatever you want here with data
 	});
 	myShellScript.stderr.on('data', (data: any)=>{
-		console.error(data);
+		console.log(data);
 	});
 
+	/*
 	while(true){
 		cp.exec('pwd', (err: string, stdout: string, stderr: string) => {
 			console.log('stdout: ' + stdout);
@@ -45,7 +46,10 @@ export function activate(context: vscode.ExtensionContext) {
 			console.log('err: ' + err);
 		});
 		
-	}	
+		
+	}
+	*/
+
 	// The command has been defined in the package.json file
 	// Now provide the implementation of the command with registerCommand
 	// The commandId parameter must match the command field in package.json
