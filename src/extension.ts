@@ -18,6 +18,7 @@ export function activate(context: vscode.ExtensionContext) {
 		console.log('stdout: ' + stdout);
 	});
 	//const myShellScript = cp.exec('./bash-git-file.sh');
+	/*
 	myShellScript.stdout.on('data2', (data: any)=>{
 		console.log(data); 
 	});
