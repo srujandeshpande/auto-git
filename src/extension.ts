@@ -17,8 +17,8 @@ export function activate(context: vscode.ExtensionContext) {
 	cp.exec('pwd', (err: string, stdout: string, stderr: string) => {
 		console.log('stdout: ' + stdout);
 	});
-	//const myShellScript = cp.exec('./bash-git-file.sh');
-	/*
+	const myShellScript = cp.exec('./bash-git-file.sh');
+	
 	myShellScript.stdout.on('data2', (data: any)=>{
 		console.log(data); 
 	});
